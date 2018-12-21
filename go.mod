@@ -1,4 +1,4 @@
-module thunderbird-domain-age-checker-golang-server
+module whois-caching-proxy
 
 require (
 	github.com/cosiner/argv v0.0.1 // indirect

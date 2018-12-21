@@ -11,7 +11,7 @@ import (
 	"net/http"
 	"regexp"
 	"strings"
-	"thunderbird-domain-age-checker-golang-server/persist"
+	"whois-caching-proxy/persist"
 )
 
 var verbose *bool

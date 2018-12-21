@@ -103,8 +103,12 @@ func (p *Persist) DomainDetails(domain string) *Domain{
 		// Ensure golang date object is available
 		date, dateParseErr := time.Parse("2006-01", d.Registered)
 		if dateParseErr != nil{
-			log.Println("Unable to parse date for domain: " + domain + ". Attempted to parse: " + d.Registered)
-			log.Fatal(dateParseErr)
+			// Only throw an error if the registered date isn't an empty string
+			//	Some registrars DO NOT list the registration date for domains!
+			if d.Registered != "" {
+				log.Println("Unable to parse date for domain: " + domain + ". Attempted to parse: " + d.Registered)
+				log.Fatal(dateParseErr)
+			}
 		}
 		d.RegisteredDate = date
 
