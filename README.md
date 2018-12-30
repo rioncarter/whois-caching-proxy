@@ -1,7 +1,19 @@
 # About
 Takes a domain via API and returns registration date. All Whois replies are cached in a SQLite database to minimize outbound request traffic.
 
-# How to Use
+# How to build
+Golang 1.11 (or higher) is *required* to build this tool
+
+Steps to compile:
+
+- git clone https://github.com/rioncarter/whois-caching-proxy.git
+- cd whois-caching-proxy
+- go build
+
+This should produce an executable named `whois-caching-proxy`
+
+
+# How to run
 - Specify a port to bind to (defaults to `:9091`) using -BindPort=9091
 - Use the `-VerboseLog=true` flag to see requests/responses to the API endpoint
 - Callers will receive a JSON object that looks like this in response:
